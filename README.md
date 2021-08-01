@@ -10,7 +10,7 @@ Hardware needed for this project include:
 - A push to make switch
 - A small loudspeaker
 - 7 male to female jumper connectors (5 for components and 2 for power)
-- 2 male to male jumper connectors/solid-core 22awg wire (for buzzer and button)
+- 2 male to male jumper connectors/solid-core 22 AWG wire (for buzzer and button)
 - An Android/iOS device
 
 All software for the Raspberry Pi is avaliable here however to remotely access a mobile device's camera we will use a free open-source software called DroidCam by Dev47Apps. 
