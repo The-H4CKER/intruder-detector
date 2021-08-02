@@ -12,6 +12,7 @@ from threading import Thread
 from time import sleep
 
 
+
 RED = (0, 0, 0xFF)
 GREEN = (0, 0xFF, 0)
 
@@ -54,7 +55,7 @@ def raiseException(error, info):
 
 
 try:
-    # Verifying server from settings.ini file
+    # Verifying server in settings.ini file
     if match(
         r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$",
         # Regex for IPv4 address
