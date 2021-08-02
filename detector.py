@@ -12,7 +12,6 @@ from threading import Thread
 from time import sleep
 
 
-
 RED = (0, 0, 0xFF)
 GREEN = (0, 0xFF, 0)
 
