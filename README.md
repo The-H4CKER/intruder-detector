@@ -9,8 +9,8 @@ Hardware needed for this project include:
 - 3 330Ω resistors
 - A push to make switch
 - A small loudspeaker
-- 7 male to female jumper connectors (5 for components and 2 for power)
-- 2 male to male jumper connectors/solid-core 22 AWG wire (for buzzer and button)
+- >=5 male to female jumper connectors (5 for components and 2 for power)
+- male to male jumper connectors/solid-core 22 AWG wire (for buzzer and button)
 - An Android/iOS device
 
 All software for the Raspberry Pi is avaliable here however to remotely access a mobile device's camera we will use a free open-source software called DroidCam by Dev47Apps. 
@@ -18,7 +18,9 @@ The download links for this are shown below:
 
 Android: https://play.google.com/store/apps/details?id=com.dev47apps.droidcam
 
-Apple: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
+iOS: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
+
+## S
 
 ## Usage
 
@@ -26,13 +28,14 @@ Install Raspberry Pi OS on a SD card and go through all the installation steps.
 
 Installation is as follows:
 ```
-pi@raspberrypi:~ $ git clone blah blah
+pi@raspberrypi:~ $ git clone https://github.com/The-H4CKER/Intruder-Detector.git
 pi@raspberrypi:~ $ cd Intruder-Detector/
-pi@raspberrypi:~/Intruder-Detector $ chmod +x detector.sh 
-pi@raspberrypi:~/Intruder-Detector $ ./detector.sh -i # Installs all dependencies for first-time usage
+pi@raspberrypi:~/Intruder-Detector $ chmod +x main.sh 
+pi@raspberrypi:~/Intruder-Detector $ ./main.sh -i # Installs all dependencies for first-time usage
 ```
 To start detection, simply run:
 ```
-pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
+pi@raspberrypi:~/Intruder-Detector $ ./main.sh
 ```
+
 

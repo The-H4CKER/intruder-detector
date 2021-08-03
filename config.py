@@ -101,7 +101,7 @@ def alert():
     greenLED.blink(0.1)
     yellowLED.blink(0.1)
     redLED.blink(0.1)
-    buzzer.beep(0.001, 3)
+    buzzer.beep()
     sleep(10)
 
 # Verifying image recognition values from settings.ini file
