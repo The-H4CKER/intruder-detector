@@ -25,7 +25,7 @@ while not cv.waitKey(1) & 0xFF == ord("q"):
             if objectIdentified == "PERSON":
                 color = config.RED
                 # Start alarm if there isn't noise already
-                if not config.alarm.is_alive():    
+                if not config.alarm.is_alive():
                     config.alarm.start()
             else:
                 color = config.GREEN

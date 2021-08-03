@@ -104,6 +104,7 @@ def alert():
     buzzer.beep(0.001, 3)
     sleep(10)
 
+
 alarm = Thread(target=alert)
 
 # Verifying image recognition values from settings.ini file
