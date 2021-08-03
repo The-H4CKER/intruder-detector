@@ -18,7 +18,7 @@ The download links for this are shown below:
 
 Android: https://play.google.com/store/apps/details?id=com.dev47apps.droidcam
 
-Apple: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
+iOS: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
 
 ## Usage
 
@@ -26,13 +26,16 @@ Install Raspberry Pi OS on a SD card and go through all the installation steps.
 
 Installation is as follows:
 ```
-pi@raspberrypi:~ $ git clone blah blah
+pi@raspberrypi:~ $ git clone https://github.com/The-H4CKER/Intruder-Detector.git
 pi@raspberrypi:~ $ cd Intruder-Detector/
-pi@raspberrypi:~/Intruder-Detector $ chmod +x detector.sh 
-pi@raspberrypi:~/Intruder-Detector $ ./detector.sh -i # Installs all dependencies for first-time usage
+pi@raspberrypi:~/Intruder-Detector $ chmod +x main.sh 
+pi@raspberrypi:~/Intruder-Detector $ ./main.sh -i # Installs all dependencies for first-time usage
 ```
 To start detection, simply run:
 ```
-pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
+pi@raspberrypi:~/Intruder-Detector $ ./main.sh
 ```
+
+
+
 
