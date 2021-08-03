@@ -4,6 +4,8 @@
 import config
 import cv2 as cv
 import RPi.GPIO as GPIO
+from threading import Thread
+
 
 print("Press 'q' to exit.")
 
@@ -25,7 +27,11 @@ while not cv.waitKey(1) & 0xFF == ord("q"):
             if objectIdentified == "PERSON":
                 color = config.RED
                 # Start alarm if there isn't noise already
+                if config.firstRun:
+                    alarm = Thread(target=config.alert)
+                    config.firstRun = False
                 if not config.alarm.is_alive():
+                    alarm = Thread(target=config.alert)
                     config.alarm.start()
             else:
                 color = config.GREEN

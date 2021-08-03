@@ -4,12 +4,12 @@ import RPi.GPIO as GPIO
 from configparser import ConfigParser
 from gpiozero import LED, Button
 from re import match
-from threading import Thread
 from time import sleep
 
 
 RED = (0, 0, 0xFF)
 GREEN = (0, 0xFF, 0)
+firstRun = True
 
 connections = []
 config = ConfigParser()
@@ -103,9 +103,6 @@ def alert():
     redLED.blink(0.1)
     buzzer.beep(0.001, 3)
     sleep(10)
-
-
-alarm = Thread(target=alert)
 
 # Verifying image recognition values from settings.ini file
 try:
