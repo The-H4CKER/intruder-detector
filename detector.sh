@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function startDetection(){
-	printf "Starting detector.py...\n"
+	printf "Starting main.py...\n"
 	source env/bin/activate
 	python main.py
 }
