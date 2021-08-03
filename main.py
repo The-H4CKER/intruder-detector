@@ -32,7 +32,7 @@ while not cv.waitKey(1) & 0xFF == ord("q"):
                     config.firstRun = False
                 if not alarm.is_alive():
                     alarm = Thread(target=config.alert)
-                    config.alarm.start()
+                    alarm.start()
             else:
                 color = config.GREEN
             # Draw box aroung image and label object identified
