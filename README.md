@@ -28,11 +28,11 @@ Installation is as follows:
 ```
 pi@raspberrypi:~ $ git clone blah blah
 pi@raspberrypi:~ $ cd Intruder-Detector/
-pi@raspberrypi:~/Intruder-Detector $ chmod +x main.sh 
-pi@raspberrypi:~/Intruder-Detector $ ./main.sh -i # Installs all dependencies for first-time usage
+pi@raspberrypi:~/Intruder-Detector $ chmod +x detector.sh 
+pi@raspberrypi:~/Intruder-Detector $ ./detector.sh -i # Installs all dependencies for first-time usage
 ```
 To start detection, simply run:
 ```
-pi@raspberrypi:~/Intruder-Detector $ ./main.sh
+pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
 ```
 
