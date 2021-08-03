@@ -1,7 +1,6 @@
 import cv2 as cv
 import requests
 import RPi.GPIO as GPIO
-#import sys
 from configparser import ConfigParser
 from gpiozero import LED, Button
 from re import match

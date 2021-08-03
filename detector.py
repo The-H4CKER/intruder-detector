@@ -4,8 +4,6 @@
 import config
 import cv2 as cv
 import RPi.GPIO as GPIO
-from gpiozero import LED, Button
-from threading import Thread
 
 print("Press 'q' to exit.")
 
