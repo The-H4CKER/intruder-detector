@@ -30,7 +30,7 @@ while not cv.waitKey(1) & 0xFF == ord("q"):
                 if config.firstRun:
                     alarm = Thread(target=config.alert)
                     config.firstRun = False
-                if not config.alarm.is_alive():
+                if not alarm.is_alive():
                     alarm = Thread(target=config.alert)
                     config.alarm.start()
             else:
