@@ -47,7 +47,7 @@ else
 		pip install pip --upgrade pip
 
 		printf "\nInstalling required libraries...\n\n"
-		pip install gpiozero requests RPi.GPIO opencv-contrib-python==4.4.0.46
+		pip install gpiozero requests RPi.GPIO opencv-python
 
 		printf "\nDone.\n\n"
 
