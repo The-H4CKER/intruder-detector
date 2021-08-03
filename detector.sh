@@ -3,7 +3,7 @@
 function startDetection(){
 	printf "Starting detector.py...\n"
 	source env/bin/activate
-	python detector.py
+	python main.py
 }
 
 function notInitialized(){
