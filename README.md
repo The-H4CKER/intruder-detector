@@ -9,7 +9,7 @@ Hardware needed for this project include:
 - 3 330Ω resistors
 - A push to make switch
 - A small loudspeaker
-- >=5 male to female jumper connectors (5 for components and 2 for power)
+- ≥5 male to female jumper connectors (5 for components and 2 for power)
 - male to male jumper connectors/solid-core 22 AWG wire (for buzzer and button)
 - An Android/iOS device
 
@@ -48,13 +48,14 @@ pi@raspberrypi:~/Intruder-Detector $ chmod +x detector.sh
 pi@raspberrypi:~/Intruder-Detector $ ./detector.sh -i # Installs all dependencies for first-time usage
 ```
 
-
 ## Usage
 
-To start detection, simply run:
+Open DroidCam on your device. To start detection from the Raspberry Pi, simply run:
 ```
 pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
 ```
+There will be a delay in the video output due to the processing time of the Pi. The size of this will depend on exactly which board you have.
+
 ### Example Output
 
 
