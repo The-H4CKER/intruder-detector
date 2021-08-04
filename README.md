@@ -20,7 +20,12 @@ Android: https://play.google.com/store/apps/details?id=com.dev47apps.droidcam
 
 iOS: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
 
-## S
+## Setup
+
+Connect the Raspberry Pi to the components as shown in the diagrams below:
+
+![wiring_diagram](https://user-images.githubusercontent.com/66517600/128146259-6c0dbd62-e9f7-4ff8-a83e-eef444c73855.png)
+
 
 ## Usage
 
