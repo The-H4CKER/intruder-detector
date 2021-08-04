@@ -22,29 +22,42 @@ iOS: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
 
 ## Setup
 
-Connect the Raspberry Pi to the components as shown in the diagrams below:
+Connect the Raspberry Pi GPIO (General Purpose Input and Output) to the compnents as shown in the circuit schematic below:
 
-![breadboard_layout](https://user-images.githubusercontent.com/66517600/128147861-45f10905-13f6-4bd7-a2e9-57c968fc0cde.png)
+![wiring_diagram](https://user-images.githubusercontent.com/66517600/128150007-c6867979-26f9-4659-bc37-539a601ae165.png)
 
-Here is the circuit schematic:
+Here is an example wiring diagram using a Rapberry Pi 2 and a half-sized breadboard:
 
-![wiring_diagram](https://user-images.githubusercontent.com/66517600/128148091-d56c71b9-df85-409d-a51d-36b89a1c0260.png)
+![breadboard_layout](https://user-images.githubusercontent.com/66517600/128152397-84f5ca5a-f20d-4ebb-9bc0-c07c89f33d10.png)
+
+Color code:
+- Red - +5V 
+- Black - GND (0V)
+- Green - Input 
+- Blue - Output
+
+If you wish to use any other GPIO pins than the ones used in the wiring diagram, you will need to modify the settings.ini file. There, you will also find other configuration data which you can modify such as the IP address and port of the device running DroidCam as well as what confidence threshold an object needs to reach to be identified as one by the model. 
+
+Install Raspberry Pi OS on a SD card and go through all the installation steps. 
+Next, download and run the install script as shown below. This should take a few minutes. 
+
+```
+pi@raspberrypi:~ $ git clone https://github.com/The-H4CKER/Intruder-Detector.git
+pi@raspberrypi:~ $ cd Intruder-Detector/
+pi@raspberrypi:~/Intruder-Detector $ chmod +x detector.sh 
+pi@raspberrypi:~/Intruder-Detector $ ./detector.sh -i # Installs all dependencies for first-time usage
+```
 
 
 ## Usage
 
-Install Raspberry Pi OS on a SD card and go through all the installation steps.
-
-Installation is as follows:
-```
-pi@raspberrypi:~ $ git clone https://github.com/The-H4CKER/Intruder-Detector.git
-pi@raspberrypi:~ $ cd Intruder-Detector/
-pi@raspberrypi:~/Intruder-Detector $ chmod +x main.sh 
-pi@raspberrypi:~/Intruder-Detector $ ./main.sh -i # Installs all dependencies for first-time usage
-```
 To start detection, simply run:
 ```
-pi@raspberrypi:~/Intruder-Detector $ ./main.sh
+pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
 ```
+### Example Output
+
+
+![2021-08-04-003132_1440x900_scrot](https://user-images.githubusercontent.com/66517600/128155068-309baea9-67a3-468a-9f32-02f8c4cde99d.png)
 
 
