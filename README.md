@@ -24,6 +24,10 @@ iOS: https://apps.apple.com/us/app/droidcam-webcam-obs-camera/id1510258102
 
 Connect the Raspberry Pi to the components as shown in the diagrams below:
 
+![breadboard_layout](https://user-images.githubusercontent.com/66517600/128146519-ac6165b2-75e6-4515-b3d9-959086e1d5ea.png)
+
+Here is the circuit schematic:
+
 ![wiring_diagram](https://user-images.githubusercontent.com/66517600/128146259-6c0dbd62-e9f7-4ff8-a83e-eef444c73855.png)
 
 
