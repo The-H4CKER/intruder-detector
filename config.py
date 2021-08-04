@@ -104,6 +104,7 @@ def alert():
     buzzer.beep()
     sleep(10)
 
+
 # Verifying image recognition values from settings.ini file
 try:
     if 0 <= float(config["IMAGE_RECOGNITION"]["ProbabilityCorrect"]) <= 1:
