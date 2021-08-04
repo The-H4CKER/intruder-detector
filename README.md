@@ -56,7 +56,7 @@ pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
 ```
 There will be a delay in the video output due to the processing time of the Pi. The size of this will depend on exactly which board you have.
 
-### Example Output
+## Example Output
 
 
 ![2021-08-04-003132_1440x900_scrot](https://user-images.githubusercontent.com/66517600/128155068-309baea9-67a3-468a-9f32-02f8c4cde99d.png)
