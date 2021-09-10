@@ -9,7 +9,7 @@ from time import sleep
 
 RED = (0, 0, 0xFF)
 GREEN = (0, 0xFF, 0)
-firstRun = True
+first_run = True
 
 connections = []
 config = ConfigParser()
@@ -29,14 +29,14 @@ class Buzzer:
     def beep(self):
         p = GPIO.PWM(26, 50)
         p.start(70)
-        for i in range(self.repeat):
+        for j in range(self.repeat):
             for x in range(200, 2200):
                 p.ChangeFrequency(x)
                 sleep(self.speed)
         p.stop()
 
 
-def raiseException(error, info):
+def raise_exception(error, info):
     if error == "CONNECTION_FAILURE":
         print(
             "Failed to connect. Please check that DroidCam is active and the correct IP address is being used."
@@ -58,30 +58,30 @@ try:
     ):
         IP = config["DROIDCAM_SERVER"]["IP"]
     else:
-        raiseException("DROIDCAM_SERVER - IP", "Invalid IP address format.")
+        raise_exception("DROIDCAM_SERVER - IP", "Invalid IP address format.")
 
     try:
         if 0 <= int(config["DROIDCAM_SERVER"]["Port"]) <= 65535:
             PORT = int(config["DROIDCAM_SERVER"]["Port"])
         else:
-            raiseException(
+            raise_exception(
                 "DROIDCAM_SERVER - Port", "Port numbers must be between 0 and 65535"
             )
     except ValueError as e:
-        raiseException("DROIDCAM_SERVER - Port", str(e))
+        raise_exception("DROIDCAM_SERVER - Port", str(e))
 
     # Verifying GPIO connections in settings.ini file
     try:
         for i in config["GPIO_CONNECTIONS"].values():
             connections.append(int(i))
     except ValueError as e:
-        raiseException("GPIO_CONNECTIONS", e)
+        raise_exception("GPIO_CONNECTIONS", e)
 
     connections.sort()
-    uniqueConnections = list(set(connections))
-    uniqueConnections.sort()
+    unique_connections = list(set(connections))
+    unique_connections.sort()
 
-    if connections == uniqueConnections and connections[0] > 1 and connections[-1] < 28:
+    if connections == unique_connections and connections[0] > 1 and connections[-1] < 28:
         redLED = LED(int(config["GPIO_CONNECTIONS"]["RedLED"]))
         yellowLED = LED(int(config["GPIO_CONNECTIONS"]["YellowLED"]))
         greenLED = LED(int(config["GPIO_CONNECTIONS"]["GreenLED"]))
@@ -89,12 +89,12 @@ try:
         buzzer = Buzzer(int(config["GPIO_CONNECTIONS"]["Buzzer"]), 0.001, 3)
         buzzer.initialize()
     else:
-        raiseException(
+        raise_exception(
             "GPIO_CONNECTIONS",
             "GPIO pins must be between 2 and 27 and cannot be repeated",
         )
 except Exception as e:
-    raiseException("CORRUPTED_FILE", e)
+    raise_exception("CORRUPTED_FILE", e)
 
 
 def alert():
@@ -110,25 +110,25 @@ try:
     if 0 <= float(config["IMAGE_RECOGNITION"]["ProbabilityCorrect"]) <= 1:
         ACCURACY = float(config["IMAGE_RECOGNITION"]["ProbabilityCorrect"])
     else:
-        raiseException(
+        raise_exception(
             "IMAGE_RECOGNITION - ProbabilityCorrect",
             "Probability is not between 0 and 1",
         )
 except ValueError as e:
-    raiseException("IMAGE_RECOGNITION - ProbabilityCorrect", e)
+    raise_exception("IMAGE_RECOGNITION - ProbabilityCorrect", e)
 
 
 # Required config and weight paths to provide analysis
-classFile = "coco.names"
-configPath = "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
-weightsPath = "frozen_inference_graph.pb"
-classNames = []
+class_file = "coco.names"
+config_path = "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
+weights_path = "frozen_inference_graph.pb"
+class_names = []
 
-with open(classFile, "r") as f:
-    classNames = f.read().rstrip("\n").split("\n")
+with open(class_file, "r") as f:
+    class_names = f.read().rstrip("\n").split("\n")
 
 # Configuring image recognition model
-net = cv.dnn_DetectionModel(weightsPath, configPath)
+net = cv.dnn_DetectionModel(weights_path, config_path)
 net.setInputSize(320, 320)
 net.setInputScale(1.0 / 127.5)
 net.setInputMean((127.5, 127.5, 127.5))
@@ -138,6 +138,6 @@ net.setInputSwapRB(True)
 try:
     r = requests.head("http://%s:%d/video" % (IP, PORT), stream=True)
 except Exception as e:
-    raiseException("CONNECTION FAILURE", e)
+    raise_exception("CONNECTION FAILURE", e)
 
 cap = cv.VideoCapture("http://%s:%d/video" % (IP, PORT))
