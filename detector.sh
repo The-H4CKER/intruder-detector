@@ -7,15 +7,15 @@ function startDetection(){
 }
 
 function notInitialized(){
-	printf "\nAn unexpected error has occured. "
+	printf "\nAn unexpected error has occurred. "
 	printf "Have you initialized the program?\n"
-	printf "Try running '${0} -i' first.\n"
+	printf "Try running '%s -i' first.\n" "${0}"
 }
 
 function usage(){
-	printf "Usage: ${0} [OPTIONS]\n"
+	printf "Usage: %s [OPTIONS]\n" "${0}"
 	printf " -h, --help Shows help\n"
-	printf " -i, --init Inititalizes the program.\n"
+	printf " -i, --init Initializes the program.\n"
 	printf " -r, --run  Starts the detector.\n"
 	printf "If no arguments are supplied, " 
 	printf "the script will default to starting the detector.\n"
@@ -42,7 +42,7 @@ else
 		sudo apt install python-opencv -y
 		sudo apt install libatlas3-base 
 
-		printf "\nUpdating pip for $(python -V)...\n\n"
+		printf "\nUpdating pip for %s...\n\n" "$(python -V)"
 		# opencv-python require pip3 >= 19.3
 		pip install pip --upgrade pip
 
@@ -74,7 +74,7 @@ else
 		startDetection || notInitialized
 		;;
 	*)
-		printf "Invalid command. Run '${0} -h' for usage.\n"
+		printf "Invalid command. Run '%s -h' for usage.\n" "${0}"
 		;;
 	esac
 fi
