@@ -39,7 +39,7 @@ Color code:
 If you wish to use any other GPIO pins other than the ones used in the wiring diagram, you will need to modify the settings.ini file. There, you will also find other configuration data which you can modify such as the IP address and port of the device running DroidCam.
 
 Install Raspberry Pi OS on an SD card and go through all the installation steps. 
-Next, download and run the install script as shown below. This should take a few minutes. 
+Next, download and run the installation script as shown below. This should take a few minutes. 
 
 ```
 $ git clone https://github.com/The-H4CKER/Intruder-Detector.git
