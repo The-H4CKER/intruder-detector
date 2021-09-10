@@ -35,7 +35,7 @@ while not cv.waitKey(1) & 0xFF == ord("q"):
                     alarm.start()
             else:
                 color = config.GREEN
-            # Draw box aroung image and label object identified
+            # Draw box around image and label object identified
             cv.rectangle(img, box, color=color, thickness=2)
             cv.putText(
                 img,
