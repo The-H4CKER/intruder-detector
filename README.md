@@ -6,7 +6,7 @@ Hardware needed for this project include:
 - A full Raspberry Pi desktop setup with monitor, keyboard, mouse, etc.
 - A breadboard 
 - 3 LEDs (green, yellow, and red)
-- 3 330Ω resistors
+- 3 330 Ω resistors
 - A push-to-make switch
 - A small loudspeaker
 - ≥5 male to female jumper connectors (5 for components and 2 for power)
@@ -42,17 +42,17 @@ Install Raspberry Pi OS on an SD card and go through all the installation steps.
 Next, download and run the install script as shown below. This should take a few minutes. 
 
 ```
-pi@raspberrypi:~ $ git clone https://github.com/The-H4CKER/Intruder-Detector.git
-pi@raspberrypi:~ $ cd Intruder-Detector/
-pi@raspberrypi:~/Intruder-Detector $ chmod +x detector.sh 
-pi@raspberrypi:~/Intruder-Detector $ ./detector.sh -i # Installs all dependencies for first-time usage
+$ git clone https://github.com/The-H4CKER/Intruder-Detector.git
+$ cd Intruder-Detector/
+$ chmod +x detector.sh 
+$ ./detector.sh -i # Installs all dependencies for first-time usage
 ```
 
 ## Usage
 
 Open DroidCam on your device. To start detection from the Raspberry Pi, simply run:
 ```
-pi@raspberrypi:~/Intruder-Detector $ ./detector.sh
+$ ./detector.sh
 ```
 There will be a delay in the video output due to the processing time of the Pi. The size of this will depend on exactly which board you have.
 
