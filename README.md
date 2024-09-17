@@ -42,8 +42,8 @@ Install Raspberry Pi OS on an SD card and go through all the installation steps.
 Next, download and run the installation script as shown below. This should take a few minutes. 
 
 ```
-$ git clone https://github.com/The-H4CKER/Intruder-Detector.git
-$ cd Intruder-Detector/
+$ git clone https://github.com/The-H4CKER/intruder-detector.git
+$ cd intruder-detector/
 $ chmod +x detector.sh 
 $ ./detector.sh -i # Installs all dependencies for first-time usage
 ```
